@@ -1,9 +1,12 @@
-import React from 'react';
+import { useState } from 'react';
 
 export default function AuthModule({ initialMode = 'login' }) {
-  const [isLogin, setIsLogin] = React.useState(initialMode === 'login');
 
-  const [formData, setFormData] = React.useState({
+  const [isLogin, setIsLogin] = useState(
+    initialMode === 'login'
+  );
+
+  const [formData, setFormData] = useState({
     name: '',
     email: '',
     password: ''
@@ -22,38 +25,57 @@ export default function AuthModule({ initialMode = 'login' }) {
     if (isLogin) {
       alert(`Logging in with: ${formData.email}`);
     } else {
-      alert(`New Student Registered: ${formData.name}`);
+      alert(
+        `RVU Student Registered: ${formData.name} (${formData.email})`
+      );
     }
   };
 
   return (
     <div style={styles.cardContainer}>
+
       <div style={styles.header}>
         <h1 style={styles.title}>RV UNIVERSITY</h1>
         <p style={styles.subtitle}>Excellence in Education</p>
       </div>
 
       <h2 style={styles.formTitle}>
-        {isLogin ? 'Student Login' : 'Student Registration'}
+        {isLogin
+          ? 'Student Login'
+          : 'Student Registration'}
       </h2>
 
       <div style={styles.tabContainer}>
+
         <button
-          style={isLogin ? styles.activeTab : styles.inactiveTab}
+          style={
+            isLogin
+              ? styles.activeTab
+              : styles.inactiveTab
+          }
           onClick={() => setIsLogin(true)}
         >
           Login
         </button>
 
         <button
-          style={!isLogin ? styles.activeTab : styles.inactiveTab}
+          style={
+            !isLogin
+              ? styles.activeTab
+              : styles.inactiveTab
+          }
           onClick={() => setIsLogin(false)}
         >
           Register
         </button>
+
       </div>
 
-      <form onSubmit={handleSubmit} style={styles.form}>
+      <form
+        onSubmit={handleSubmit}
+        style={styles.form}
+      >
+
         {!isLogin && (
           <input
             type="text"
@@ -86,15 +108,23 @@ export default function AuthModule({ initialMode = 'login' }) {
           required
         />
 
-        <button type="submit" style={styles.submitBtn}>
-          {isLogin ? 'Sign In to Portal' : 'Create Student Account'}
+        <button
+          type="submit"
+          style={styles.submitBtn}
+        >
+          {isLogin
+            ? 'Sign In to Portal'
+            : 'Create Student Account'}
         </button>
+
       </form>
+
     </div>
   );
 }
 
 const styles = {
+
   cardContainer: {
     maxWidth: '400px',
     margin: '30px auto',
@@ -184,4 +214,5 @@ const styles = {
     fontSize: '15px',
     cursor: 'pointer'
   }
+
 };

@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Campus Connect Portal | Home</title>
 
     <link rel="stylesheet" href="./src/style.css">
@@ -11,7 +12,6 @@
 
 <body>
 
-    <!-- Top Navigation Header -->
     <header class="navbar">
 
         <div class="logo-group">
@@ -33,19 +33,20 @@
         </div>
 
         <div class="nav-actions">
-            <a href="#login" class="btn-secondary">
+
+            <a href="/login" class="btn-secondary">
                 Login
             </a>
 
-            <a href="#register" class="btn-primary">
+            <a href="/register" class="btn-primary">
                 Register
             </a>
+
         </div>
 
     </header>
 
 
-    <!-- Hero Banner -->
     <section class="hero-banner">
 
         <div class="hero-content">
@@ -63,9 +64,11 @@
             </p>
 
             <div class="hero-cta-group">
+
                 <a href="#roles" class="btn-hero-primary">
                     Explore User Portals ➔
                 </a>
+
             </div>
 
         </div>
@@ -73,7 +76,6 @@
     </section>
 
 
-    <!-- Campus Life & Portal Highlights -->
     <section class="section-container">
 
         <h2 class="section-title">
@@ -99,7 +101,6 @@
 
                 <div class="carousel-track" id="carouselTrack">
 
-                    <!-- Slide 1 -->
                     <div class="slide active-slide">
 
                         <img
@@ -113,7 +114,6 @@
                     </div>
 
 
-                    <!-- Slide 2 -->
                     <div class="slide">
 
                         <img
@@ -127,7 +127,6 @@
                     </div>
 
 
-                    <!-- Slide 3 -->
                     <div class="slide">
 
                         <img
@@ -155,7 +154,6 @@
         </div>
 
 
-        <!-- Slide Indicators -->
         <div class="carousel-dots" id="carouselDots">
 
             <span
@@ -178,7 +176,6 @@
     </section>
 
 
-    <!-- User Role Section -->
     <section id="roles" class="section-container bg-light">
 
         <h2 class="section-title">
@@ -188,8 +185,6 @@
 
         <div class="roles-grid">
 
-
-            <!-- Student Card -->
             <article class="role-card student-border">
 
                 <div class="role-icon">
@@ -209,14 +204,16 @@
 
                 </ul>
 
-                <button class="btn-portal student-bg">
+                <a
+                    href="/student"
+                    class="btn-portal student-bg"
+                    style="display: inline-block; text-align: center; text-decoration: none;">
                     Access Student View
-                </button>
+                </a>
 
             </article>
 
 
-            <!-- Faculty Card -->
             <article class="role-card faculty-border">
 
                 <div class="role-icon">
@@ -243,7 +240,6 @@
             </article>
 
 
-            <!-- Admin Card -->
             <article class="role-card admin-border">
 
                 <div class="role-icon">
@@ -269,15 +265,18 @@
 
             </article>
 
-
         </div>
 
     </section>
-  <section id="auth-section">
-      <div id="auth-root"></div></div>
+
+
+    <section id="auth-section">
+
+        <div id="auth-root"></div>
+
     </section>
 
-    
+
     <script type="module" src="./src/main.jsx"></script>
 
 </body>
